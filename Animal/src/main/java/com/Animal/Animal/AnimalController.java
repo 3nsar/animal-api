@@ -35,7 +35,7 @@ public class AnimalController {
     }
 
     @PostMapping("/animal")
-    public ResponseEntity<Animal> addAnimal(@RequestPart Animal animal){
+    public ResponseEntity<Animal> addAnimal(@RequestBody Animal animal){
         Animal animal1 = animalService.addAnimal(animal);
 
         if(animal1 != null){
