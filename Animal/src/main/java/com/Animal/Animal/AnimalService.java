@@ -14,29 +14,32 @@ public class AnimalService {
     }
 
     public List<Animal> getAllAnimals(){
-        return animalRepo.findAll();
+        return  animalRepo.findAll();
     }
 
     public Animal getAnimalById(int id){
         return animalRepo.findById(id).orElse(null);
     }
 
+    public void deleteAnimalById(int id){
+        animalRepo.deleteById(id);
+    }
+
     public Animal addAnimal(Animal animal){
         return animalRepo.save(animal);
     }
 
-    public Animal updateAnimal(int id, Animal animal){
+    public Animal updateAnimalById(int id, Animal animal){
         if(animalRepo.existsById(id)){
             animal.setId(id);
             return animalRepo.save(animal);
         }else{
-            return null;
+            return  null;
         }
     }
 
-    public void deleteAnimalById(int id){
-        animalRepo.deleteById(id);
-    }
+
+
 
 
 
