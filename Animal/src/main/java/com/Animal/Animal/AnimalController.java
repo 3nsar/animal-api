@@ -43,7 +43,6 @@ public class AnimalController {
         }else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
     }
 
 
